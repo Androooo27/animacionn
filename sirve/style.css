@@ -1,0 +1,39 @@
+body {
+    background-color: #f7f7f7;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Patrón de fondo */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('ruta-a-tu-patron.jpg'); /* Reemplaza con la ruta correcta */
+    opacity: 0.1;
+    pointer-events: none;
+}
+
+/* Animación */
+@keyframes movePattern {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(100px); /* Cambia la distancia de desplazamiento */
+    }
+}
+
+.animated-element {
+    width: 100px;
+    height: 100px;
+    background-color: #ffcc00;
+    animation: movePattern 3s infinite alternate; /* Alterna la dirección de la animación */
+}
